@@ -28,7 +28,6 @@ $(document).ready(function () {
    ivivu.getInstance().onVideoDisconnect = function(vplayer){
    }
 
-
 });
 
 

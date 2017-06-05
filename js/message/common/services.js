@@ -4,20 +4,20 @@
 
 ibigfox.provide('vvconference.message.common.services');
 
-ibigfox.basePath="../../../";
+ibigfox.basePath="../";
 
-ibigfox.addPath('demo/vvconference/js/message/common/Tags.js', ['vvconference.message.common.Tags']);
-ibigfox.addPath('demo/vvconference/js/message/cs/CSGetLives.js', ['vvconference.message.cs.CSGetLives']);
-ibigfox.addPath('demo/vvconference/js/message/cs/CSStartLive.js', ['vvconference.message.cs.CSStartLive']);
-ibigfox.addPath('demo/vvconference/js/message/cs/CSStopLive.js', ['vvconference.message.cs.CSStopLive']);
-ibigfox.addPath('demo/vvconference/js/message/cs/CSStartKaraoke.js', ['vvconference.message.cs.CSStartKaraoke']);
-ibigfox.addPath('demo/vvconference/js/message/cs/CSKaraokeLength.js', ['vvconference.message.cs.CSKaraokeLength']);
+ibigfox.addPath('js/message/common/Tags.js', ['vvconference.message.common.Tags']);
+ibigfox.addPath('js/message/cs/CSGetLives.js', ['vvconference.message.cs.CSGetLives']);
+ibigfox.addPath('js/message/cs/CSStartLive.js', ['vvconference.message.cs.CSStartLive']);
+ibigfox.addPath('js/message/cs/CSStopLive.js', ['vvconference.message.cs.CSStopLive']);
+ibigfox.addPath('js/message/cs/CSStartKaraoke.js', ['vvconference.message.cs.CSStartKaraoke']);
+ibigfox.addPath('js/message/cs/CSKaraokeLength.js', ['vvconference.message.cs.CSKaraokeLength']);
 
-ibigfox.addPath('demo/vvconference/js/message/item/VideoInfo.js', ['vvconference.message.item.VideoInfo']);
-ibigfox.addPath('demo/vvconference/js/message/sc/SCGetLives.js', ['vvconference.message.sc.SCGetLives']);
-ibigfox.addPath('demo/vvconference/js/message/sc/SCStartLiveBroadcast.js', ['vvconference.message.sc.SCStartLiveBroadcast']);
-ibigfox.addPath('demo/vvconference/js/message/sc/SCStopLiveBroadcast.js', ['vvconference.message.sc.SCStopLiveBroadcast']);
-ibigfox.addPath('demo/vvconference/js/message/sc/SCStartKaraoke.js', ['vvconference.message.sc.SCStartKaraoke']);
+ibigfox.addPath('js/message/item/VideoInfo.js', ['vvconference.message.item.VideoInfo']);
+ibigfox.addPath('js/message/sc/SCGetLives.js', ['vvconference.message.sc.SCGetLives']);
+ibigfox.addPath('js/message/sc/SCStartLiveBroadcast.js', ['vvconference.message.sc.SCStartLiveBroadcast']);
+ibigfox.addPath('js/message/sc/SCStopLiveBroadcast.js', ['vvconference.message.sc.SCStopLiveBroadcast']);
+ibigfox.addPath('js/message/sc/SCStartKaraoke.js', ['vvconference.message.sc.SCStartKaraoke']);
 
 
 ibigfox.resetBasePath();
