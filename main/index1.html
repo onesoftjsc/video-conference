@@ -22,10 +22,14 @@
 
 </head>
 <body>
-<video id="stth" width="640" height="480" >
-    <source src="https://bigmath.vn/stth.mp4" type="video/mp4">
-</video>
-<button onclick="vvcService.startVideo();">Start</button>
+<span>
+Audio <select id="selectaudio"></select>
+</span><br>
+<span>
+Video <select id="selectvideo"></select><br>
+</span>
+<button id = 'button1' onclick="vvcService.onclick();">Start</button>
+
 <div class="row">
     <div id = "cell1" class="col-xs-3">
 

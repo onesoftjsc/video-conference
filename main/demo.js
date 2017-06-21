@@ -8,14 +8,15 @@ ibigfox.require('vvconference.message.common.services');
 
 $(document).ready(function () {
    var appId = $("meta[name='appId']").attr("content");
-   ivivu.getInstance().init(appId, function () {
-      ivivu.getInstance().authenticate(appId, function(){
-         scanVideos();
+   ivivu.setDevice('selectaudio', 'selectvideo');
+
+   ivivu.init(appId, function () {
+      ivivu.authenticate(appId, function(){
          vvcService.init();
       });
    });
 
-   ivivu.getInstance().onVideoConnected = function(vplayer){
+   ivivu.onVideoConnected = function(vplayer){
       for( var videoId in vplayer.parentIds){
          var video = vplayer.video.cloneNode(true);
          document.getElementById(vplayer.parentIds[videoId]).innerHTML = '';
@@ -25,37 +26,11 @@ $(document).ready(function () {
       }
    }
 
-   ivivu.getInstance().onVideoDisconnect = function(vplayer){
+   ivivu.onVideoDisconnect = function(vplayer){
    }
 
 });
 
-
-function scanVideos() {
-   $('.vivu-player-live').each(function (index) {
-      var videoId = $(this).attr('id');
-      ivivu.getInstance().attachVideo(videoId);
-   });
-
-   $('.vivu-player-view').each(function (index) {
-      var videoId = $(this).attr('id');
-      ivivu.getInstance().attachVideo(videoId);
-   });
-
-   $('.vivu-player-live').each(function (index) {
-      var autostart = $(this).attr('autostart');
-      var liveId = $(this).attr('liveId');
-      if (autostart == 'true')
-      ivivu.getInstance().mapLiveIdToLiveIPlayer[liveId].start();
-   });
-
-   $('.vivu-player-view').each(function (index) {
-      var autostart = $(this).attr('autostart');
-      var liveId = $(this).attr('liveId');
-      if (autostart == 'true')
-         ivivu.getInstance().mapLiveIdToViewIPlayer[liveId].start();
-   });
-}
 
 
 

@@ -53,33 +53,42 @@ vvcService.init = function(){
     this.vConnect.onDisconnected = function(){}
     this.vConnect.onStartNewSession = function(){
         vConnect.send(new vvconference.message.cs.CSGetLives());
-    }
-
+    };
     this.vConnect.start();
 }
 
 
 vvcService.startView = function(index, sessionId){
-    var vplayer = ivivu.getInstance().createNewVideo('view', sessionId);
-
-    vplayer.parentIds = vplayer.parentIds || [];
-    vplayer.parentIds.push('cell' + (index + 1));
+    var vplayer = ivivu.createNewVideo('view', sessionId);
+    vplayer.addParent('cell' + (index + 1));
+    vplayer.setResolution(720);
     vplayer.start();
 }
 
 vvcService.startLive = function(index, sessionId){
-    var vplayer = ivivu.getInstance().createNewVideo('live', sessionId, VIDEO_LIVE_TYPE_WEBCAM);
+    var vplayer = ivivu.createNewVideo('live', sessionId);
 
-    vplayer.parentIds = vplayer.parentIds || [];
-    vplayer.parentIds.push('cell' + (index + 1));
+    vplayer.addParent('cell' + (index + 1));
     $("#cell" + (index + 1)).css({"border-color": "red",
         "border-width":"4px",
         "border-style":"solid"});
+
+
+    var audioSelect = document.getElementById('selectaudio');
+    var videoSelect = document.getElementById('selectvideo');
+    vplayer.setup({
+        audioId: audioSelect.options[audioSelect.selectedIndex].value,
+        videoId: videoSelect.options[videoSelect.selectedIndex].value,
+        resolution: 720
+    });
+    vplayer.onConnected = function(){
+        document.getElementById('button1').style.visibility = "hidden";;
+    }
     vplayer.start();
 }
 
 vvcService.stopLive = function(index, sessionId){
-    var vplayer = ivivu.getInstance().mapLiveIdToViewIPlayer[sessionId];
+    var vplayer = ivivu.mapLiveIdToViewIPlayer[sessionId];
     document.getElementById("cell" + (index + 1)).innerHTML = '';
 }
 
@@ -94,4 +103,10 @@ vvcService.startVideo = function(){
             clearInterval(i);
         }
     }, 200);
+}
+
+
+vvcService.onclick = function(){
+    this.vConnect.send(new vvconference.message.cs.CSStartLive());
+
 }

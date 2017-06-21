@@ -18,7 +18,7 @@ vvconference.message.sc.SCStartKaraoke = function(){
 ibigfox.inherits('vvconference.message.sc.SCStartKaraoke', 'bigfox.network.message.base.BaseMessage');
 
 vvconference.message.sc.SCStartKaraoke.prototype.execute = function(){
-    document.getElementById('stth').volume = 0.5;
-    document.getElementById('stth').currentTime = this.time;
-    document.getElementById('stth').play();
+    //document.getElementById('stth').volume = 0.5;
+    //document.getElementById('stth').currentTime = this.time;
+    //document.getElementById('stth').play();
 }

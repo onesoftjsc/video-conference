@@ -23,5 +23,5 @@ vvconference.message.sc.SCGetLives.prototype.execute = function(){
         var videoInfo = this.videoInfos[index];
         vvcService.startView(videoInfo.index, videoInfo.sessionId);
     }
-    this.bfConnect.send(new vvconference.message.cs.CSStartLive());
+
 }
